@@ -78,7 +78,7 @@ function buildToDo(todo, index) {
 function buildToDos(toDos) {
   // Tu código acá:
   return toDos.map(buildToDo); 
-  //[<div class='toDoShell'> <span id=' '></span> </div>, <div class='toDoShell'> <span id=' '></span> </div>, ...]
+  //[<div class='toDoShell'> <span id=' '>Comprar leche</span></div>, <div class='toDoShell'> <span id=' '>pagar</span> </div>, ...]
 
   // Forma explicita............................
   // var arrrayToDo= toDos.map(function(item, i){
@@ -98,7 +98,8 @@ function buildToDos(toDos) {
 
 function displayToDos() {
   // Tu código acá:
-  
+  let toDoContainer  = document.querySelector('#toDoContainer');
+  toDoContainer.innerHTML= '';
 }
 
 // La función 'addToDo' agregará un nuevo ToDo al array 'toDoItems'
