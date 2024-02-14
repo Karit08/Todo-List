@@ -29,8 +29,8 @@ function ToDo(description) {
 
 // Tu código acá:
 ToDo.prototype.completeToDo = function(){
-  this.complete = true;
-  // this.complete = !this.complete; 
+  // this.complete = true; 
+  this.complete = !this.complete; 
 };
 
 // Agregar dos parámetros a la función 'buildToDo':
@@ -61,10 +61,11 @@ function buildToDo(todo, index) {
   toDoText.id = index; //<span id=' '>  </span>
   
   if(todo.complete){ //6
-    toDoText.className = 'completeText'
+    toDoText.className = 'completeText';
   }
 
   toDoShell.appendChild(toDoText); //7 <div class='toDoShell'> <span id=' '></span> </div>
+  toDoText.addEventListener('click', completeToDo)
 
   return toDoShell;
 }
@@ -149,10 +150,10 @@ add.addEventListener('click', addToDo);
 //      esta función como callback
 
 function completeToDo(event) {
-  // DESCOMENTAR LA SIGUIENTE LINEA
-  //const index = event.target.id;
+  const index = event.target.id;
   // Tu código acá:
-  
+  toDoItems[index].completeToDo(); //completeToDo metodo de Objeto quer cambia mi completeToDo
+  displayToDos();
 }
 
 // Una vez que llegaste a este punto verificá que todos los tests pasen
