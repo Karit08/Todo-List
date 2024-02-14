@@ -100,6 +100,11 @@ function displayToDos() {
   // Tu código acá:
   let toDoContainer  = document.querySelector('#toDoContainer');
   toDoContainer.innerHTML= '';
+  let builds = buildToDos(toDoItems);
+  
+  for (let i = 0; i < builds.length; i++) {
+    toDoContainer.appendChild(builds[i]);
+  } //builds.forEach(e => toDoContainer.appendChild(e));
 }
 
 // La función 'addToDo' agregará un nuevo ToDo al array 'toDoItems'
@@ -113,7 +118,14 @@ function displayToDos() {
 
 function addToDo() {
   // Tu código acá:
-}
+  let input = document.querySelector('#toDoInput');
+  if(input.value !== ''){
+    let toDo = new ToDo(input.value);
+    toDoItems.push(toDo);
+    input.value = '';
+    displayToDos();
+  };
+};
 
 // Agregar un 'Event Listener' para que cada vez que el botón 'AGREGAR' sea clickeado
 // se ejecute la función 'addToDo'
@@ -121,6 +133,8 @@ function addToDo() {
 //   2) Agregarle un 'click' event listener, pasándole la función 'addToDo' como callback
 
 // Tu código acá:
+let add =  document.querySelector('#addButton');
+add.addEventListener('click', addToDo);
 
 // La función completeToDo se va a ejecutar cuando queramos completar un todo
 // [NOTA: Algunas cuestiones a tener en cuenta
@@ -138,6 +152,7 @@ function completeToDo(event) {
   // DESCOMENTAR LA SIGUIENTE LINEA
   //const index = event.target.id;
   // Tu código acá:
+  
 }
 
 // Una vez que llegaste a este punto verificá que todos los tests pasen
