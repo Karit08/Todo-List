@@ -8,24 +8,38 @@
 </head>
 
 <body>
-    <div id="header">
-        <!-- <a href="https://www.soyhenry.com/" target="_blank_"><img src="./assets/henry.png" /></a> -->
-        <span></span>
-    </div>
-    <h1>To-Do App</h1>
-    <div>
-    <div id="container">
-        <div id="inputContainer">
-            <input type="text" id="toDoInput" placeholder="Descripción To-Do..." />
-            <div id="addButton"><span>AGREGAR</span></div>
+    <header>
+        <div id="header">
+            <!-- <a href="https://www.soyhenry.com/" target="_blank_"><img src="./assets/henry.png" /></a> -->
+            <span></span>
         </div>
-        <div id="toDoContainer"></div>
-    </div>
-    <div>
-        <span id="createdBy">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAhhJREFUSEvF1UuoTmEUBuDnJLfCyEQKRRkopCQTM8otxQSRjOQakgnhFAO5ZYAYKYSJcg2lMDZBSoRCYuieS/jW6fu17fa/938GJ9/o7P+sb73rXetd79elj09XH+fXBDAQizATUzAGw/AB53AXl/N3Za11AHNwDKMaWL7FqlTApaq4dgC7sDNfeInzuIr7+IFxmIEN+e8IPZSYbC6DVAG0kn/EstyC321YxP312ItB2IPtxdgywPxM9WuqeCoeFYKPYA2OYm0JcDpuYwAWFNtVBBiCJxiB5Yn66VKSIotyYfF9BkvS3WeFtv2jotW5ugeYnGZQbks7BpNSUccxLRcUs5rXKq5YyTXMxjpEsqYTct2d29YPb7A1M/l7twjwGiMxFs8bskcLD2J4GupP7M9gn+tU9CWpYXBWw7cagJt58SIkWIdUo++Ni/Y+b+lQfOoQ4HoGeNoJwGOMx8RkDw/7okVnsTgPal/ThDPbXg05tvZUAgkmE/CrA5AIKcv0Vp5Rj8yLKooBR/Iwt5XJOU92CNDKE4u5FK+KBlneyFm4gSqrqMMLq7iTvKh/bnOYY8+pMrttWdOhqmjblQYmsZyRMNR3IClwSzG+nV3vSODdOfBFThCaDxsJ4FbvN2FF/j6MjXWLVv7f3Owxsd11511+cC5WBTU9meHxCxGvW+zH6CzP78nQ7qXfLuAE4u2oPE0AvRDSfwL4A+mZaxnKw5FsAAAAAElFTkSuQmCC"/>
-           Creado por </span></div>
-    </div>
+    </header>
+
+    <section>
+        <h1 className="Title">To-Do App</h1>
+        <div>
+            <div id="container">
+                <div id="inputContainer">
+                    <input type="text" id="toDoInput" placeholder="Agrega tu tarea..." />
+                <div id="addButton"><span>+</span></div>
+            </div>
+            <div id="toDoContainer"></div>
+            </div>
+            <p id="empty"> 
+                No tienes tareas pendientes 
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div>
+            <span id="createdBy">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAhhJREFUSEvF1UuoTmEUBuDnJLfCyEQKRRkopCQTM8otxQSRjOQakgnhFAO5ZYAYKYSJcg2lMDZBSoRCYuieS/jW6fu17fa/938GJ9/o7P+sb73rXetd79elj09XH+fXBDAQizATUzAGw/AB53AXl/N3Za11AHNwDKMaWL7FqlTApaq4dgC7sDNfeInzuIr7+IFxmIEN+e8IPZSYbC6DVAG0kn/EstyC321YxP312ItB2IPtxdgywPxM9WuqeCoeFYKPYA2OYm0JcDpuYwAWFNtVBBiCJxiB5Yn66VKSIotyYfF9BkvS3WeFtv2jotW5ugeYnGZQbks7BpNSUccxLRcUs5rXKq5YyTXMxjpEsqYTct2d29YPb7A1M/l7twjwGiMxFs8bskcLD2J4GupP7M9gn+tU9CWpYXBWw7cagJt58SIkWIdUo++Ni/Y+b+lQfOoQ4HoGeNoJwGOMx8RkDw/7okVnsTgPal/ThDPbXg05tvZUAgkmE/CrA5AIKcv0Vp5Rj8yLKooBR/Iwt5XJOU92CNDKE4u5FK+KBlneyFm4gSqrqMMLq7iTvKh/bnOYY8+pMrttWdOhqmjblQYmsZyRMNR3IClwSzG+nV3vSODdOfBFThCaDxsJ4FbvN2FF/j6MjXWLVv7f3Owxsd11511+cC5WBTU9meHxCxGvW+zH6CzP78nQ7qXfLuAE4u2oPE0AvRDSfwL4A+mZaxnKw5FsAAAAAElFTkSuQmCC"/>
+               Creado por 
+            </span>
+        </div>
+        <div></div>
+    </footer>
 </body>
 
 </html>

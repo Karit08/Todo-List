@@ -1,13 +1,14 @@
 // Crear un array vacío llamado 'toDoItems'
 // Tu codigo acá:
 var toDoItems=[];
+const empty = document.querySelector('#empty');
 
 // En la página 'index.html' hay un elemento span cuyo texto es 'Aplicación creada por:'.
 // Usando querySelector seleccionar dicho span por su id ('createdBy') y luego usando innerHTML
 // agregar tu nombre al final del texto actual. Ej: 'Aplicación creada por Franco'
 // Tu código acá:
 let span= document.querySelector('#createdBy');
-span.innerHTML= span.innerHTML + ' Karla Jimenez';
+span.innerHTML= span.innerHTML + 'Karla Jimenez';
 
 // Crear una clase denominada 'ToDo' cuyo constructor debe recibir un único parámetro del tipo string
 // con el nombre 'description' que será justamente la descripción del ToDo.
@@ -59,13 +60,24 @@ function buildToDo(todo, index) {
   let toDoText= document.createElement('span'); //3
   toDoText.innerHTML = todo.description;
   toDoText.id = index; //<span id=' '>  </span>
+
+  let deleteButton = document.createElement('span');
+  deleteButton.innerHTML = '❌';
+  deleteButton.className = "btn-delete";
+  // deleteButton.id = index; 
+  
   
   if(todo.complete){ //6
     toDoText.className = 'completeText';
-  }
-
+  };
+  
   toDoShell.appendChild(toDoText); //7 <div class='toDoShell'> <span id=' '></span> </div>
-  toDoText.addEventListener('click', completeToDo)
+  toDoShell.appendChild(deleteButton);
+  toDoText.addEventListener('click', completeToDo);
+  deleteButton.addEventListener('click', (index)=>{
+    toDoItems.splice(index, 1);
+    displayToDos();
+  });
 
   return toDoShell;
 }
@@ -101,11 +113,15 @@ function displayToDos() {
   // Tu código acá:
   let toDoContainer  = document.querySelector('#toDoContainer');
   toDoContainer.innerHTML= '';
+  
   let builds = buildToDos(toDoItems);
   
+  if(builds.length === 0) empty.style.display = "block";
+
   for (let i = 0; i < builds.length; i++) {
     toDoContainer.appendChild(builds[i]);
   } //builds.forEach(e => toDoContainer.appendChild(e));
+  
 }
 
 // La función 'addToDo' agregará un nuevo ToDo al array 'toDoItems'
@@ -117,13 +133,17 @@ function displayToDos() {
 //  3) Setear el valor del input toDoInput como un string vacio ("") (Esto se realiza para que en la vista se borre lo que se encontraba escrito)
 //  4) Llamar a la función displayToDos para que se actualicen los toDos mostrados en pantalla
 
+
 function addToDo() {
   // Tu código acá:
   let input = document.querySelector('#toDoInput');
+  
   if(input.value !== ''){
     let toDo = new ToDo(input.value);
     toDoItems.push(toDo);
     input.value = '';
+    // empty.innerHTML=" ";
+    empty.style.display = "none";
     displayToDos();
   };
 };
@@ -157,6 +177,12 @@ function completeToDo(event) {
 }
 
 // Una vez que llegaste a este punto verificá que todos los tests pasen
+
+// function deleteToDo(index) {
+//   // Tu código acá:
+//   toDoItems.splice(index, 1);
+//   displayToDos();
+// };
 
 // **********************************************EXTRA CREDITOS:********************************************** //
 
