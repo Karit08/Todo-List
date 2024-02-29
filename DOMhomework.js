@@ -3,6 +3,8 @@
 var toDoItems=[];
 const empty = document.querySelector('#empty');
 
+const totalTask = document.querySelector('#totalTask');
+
 // En la página 'index.html' hay un elemento span cuyo texto es 'Aplicación creada por:'.
 // Usando querySelector seleccionar dicho span por su id ('createdBy') y luego usando innerHTML
 // agregar tu nombre al final del texto actual. Ej: 'Aplicación creada por Franco'
@@ -121,7 +123,8 @@ function displayToDos() {
   for (let i = 0; i < builds.length; i++) {
     toDoContainer.appendChild(builds[i]);
   } //builds.forEach(e => toDoContainer.appendChild(e));
-  
+
+  totalTask.innerHTML=  toDoItems.length ;
 }
 
 // La función 'addToDo' agregará un nuevo ToDo al array 'toDoItems'
@@ -183,6 +186,12 @@ function completeToDo(event) {
 //   toDoItems.splice(index, 1);
 //   displayToDos();
 // };
+
+let clean = document.querySelector('#clean');
+clean.addEventListener('click', () => {
+  toDoItems = [];
+  displayToDos();
+});
 
 // **********************************************EXTRA CREDITOS:********************************************** //
 
