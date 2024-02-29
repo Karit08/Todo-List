@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(232, 246, 255);
+  background-color: #ffffff;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   margin-top: 56px;
   display: flex;
@@ -12,11 +12,12 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background: #428fbb;
-  height: 56px;
+  background: #17c3b2;
+  opacity: .7;
+  height: 190px;
   /* padding-left: 15px; */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -30,10 +31,15 @@ body {
   padding-left: 15px;
 }
 
+section{
+  /* background: #000; */
+  display: grid;
+  margin-top: 7%;
+}
 
 #container {
-  background-color: #428fbb;
-  box-shadow: 2px 2px 5px#000;
+  background-color: #FFF;
+  /* box-shadow: .2px .5px 5px #bfc0c0; */
   width: 50%;
   min-width: 700px;
   border-radius: 5px;
@@ -53,46 +59,55 @@ body {
   font-size: 20px;
   border: none;
   border-radius: 4px;
+  background-color: #68d8d6;
+  opacity: .2;
 }
 
 #addButton {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 45px;
   margin-left: 10px;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   height: 35px;
-  background: #0160A2;
+  background: #17c3b2;
   color: #FFF;
   font-size: 20px;
 }
 
 #toDoContainer {
   width: 100%;
-  display: flex;
+  display: grid;
   justify-content: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   cursor: pointer;
 }
 
 .toDoShell {
   width: 650px;
   min-height: 50px;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 90% 10%;
+  /* display: flex; */
   align-items: center;
-  background: #fff;
+  box-shadow: .2px .5px 5px #bfc0c0; 
   margin-bottom: 10px;
-  border-radius: 5px;
+  border-radius: 7px;
   font-size: 20px;
   padding: 5px;
 }
 
 .toDoShell span {
   width: 90%;
+  margin-left: 8px;
 }
+
+/* #btn-delete{
+ 
+} */
+
 .completeText {
   color: lightgrey;
   text-decoration: line-through;
@@ -104,4 +119,13 @@ body {
 
 .empty{
   display: block;
+}
+
+#footer{
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  position: absolute;
+  background: #bfdbf7;
+  height: 60px;
 }

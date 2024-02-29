@@ -58,11 +58,11 @@ function buildToDo(todo, index) {
   toDoShell.className = 'toDoShell'; //<div class='toDoShell'></div>
 
   let toDoText= document.createElement('span'); //3
-  toDoText.innerHTML = todo.description;
+  toDoText.innerHTML ="✓ " +  todo.description;
   toDoText.id = index; //<span id=' '>  </span>
 
   let deleteButton = document.createElement('span');
-  deleteButton.innerHTML = '❌';
+  deleteButton.innerHTML = '⊗';
   deleteButton.className = "btn-delete";
   // deleteButton.id = index; 
   
